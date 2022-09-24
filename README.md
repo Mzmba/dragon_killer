@@ -1,56 +1,40 @@
-# GGNMSL
-此插件对机器性能需求稍高，请在2H4G主机上使用
+# 龙图检测插件
 
-基于pcrsealkiller(另一个插件)思路制作的Hoshinobot反广告插件
+基于[dragon-pic-detect](https://github.com/zyddnys/dragon-pic-detect)和[Akagicv](https://github.com/Akagicv)大佬的[GGNMSL](https://github.com/Akagicv/GGNMSL)插件暴力缝合而成的Hoshinobot 龙图检测插件
 
 ## 目录
+
 - [插件简介](#插件简介)
 - [部署插件](#部署插件)
 - [版权声明](#版权声明)
 - [鸣谢](#鸣谢)
 
-![image](https://github.com/Akagicv/GGNMSL/blob/main/test/test.jpg)
-
-
-
-
 ### 插件简介
-没有指令控制此插件
 
------gg.jpg
+没有指令，可在lssv中控制开关。
 
-用于撤回后提示消息发送的图片
+py文件内有相应注释可修改检测到龙图后机器人做出的操作和检测力度方式等。
 
------ggnmsl.py
-
-关键词匹配，如果匹配则撤回广告消息并且禁言10分钟
-
------ggnmslocr.py
-
-使用ocr进行关键词识别广告，禁言同上处理
-
------ggnmslopencv.py 
-
-在ocr未识别到任何广告信息的情况下进行图片二维码识别，查看二维码对应网站标题，进行关键词对照标题识别
-
------Keyword.txt 
-
-检测使用的关键词列表，如需要添加关键词只需要输入 "空格"关键词 即可
+* [ ] TODO:dragon-pic-detect实现了检测gif图，但是这边插件需要稍微修改一下代码才行，等有时间再弄吧
 
 ### 部署插件
 
-1.安装opencv 命令  pip3 install opencv-python
+1. 安装依赖.
 
-2.把插件放到HoshinoBot/hoshino/modules 目录下
+```
+python3.8 -m pip install -r requirements.txt
+```
 
-3.在HoshinoBot/hoshino/modules/config/__bot__.py 文件内MODULES_ON内添加「 'ggnmsl', 」开启插件
+3.在HoshinoBot/hoshino/modules/config/__bot__.py 文件内MODULES_ON内添加
+
+```
+ 'dragon_killer', 
+```
 
 ### 版权声明
 
-该项目签署了GPL3.0授权许可
+该项目签署了GPL3.0授权许可.
 
 ### 鸣谢
 
-- [GWYOG大佬的pcrsealkiller项目](https://github.com/GWYOG/GWYOG-Hoshino-plugins/tree/master/pcrsealkiller)
-
-
+- [Acagicv大佬的GGNMSL插件](https://github.com/Akagicv/GGNMSL "reademe都是抄的()")
